@@ -5,12 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Static Webpage</title>
     <link rel="stylesheet" href="styles.css" />
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .menu-btn {
+            display: block;
+            width: 48px;
+            height: 36px;
+            margin: 20% auto 0 auto;
+        }
+        
+        .menu-btn-block {
+            width: 100%;
+            height: 6px;
+            background-color: #09f;
+            border-radius: 3px;
+            transform-origin: 0 50%;
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-btn-block.middle {
+            margin: 9px 0;
+        }
+        
+        .menu-btn-block.top.active {
+            transform: rotate(38.682deg);
+        }
+        .menu-btn-block.middle.active {
+            transform: scale(0);
+        }
+        .menu-btn-block.bottom.active {
+            transform: rotate(-38.682deg);
+        }   
+        
+        /* Hide the navigation menu by default */
+        nav {
+            display: none;
+            text-align: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+        
+        /* Show the navigation menu when the menu button is active */
+        nav.active {
+            display: block;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 10px;
+            background-color: #09f;
+            border-radius: 3px;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
 <body>
+    <a href="#" class="menu-btn">
+        <div class="menu-btn-block top"></div>
+        <div class="menu-btn-block middle"></div>
+        <div class="menu-btn-block bottom"></div>
+    </a>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -23,6 +99,20 @@
     <footer>
         <p>&copy; 2023 Your Name</p>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            var menuBtn = $('a.menu-btn'),
+                menuBtnBlock = menuBtn.find('div.menu-btn-block'),
+                nav = $('nav');
+            
+            menuBtn.on('click', function(e) {
+                e.preventDefault();
+                menuBtnBlock.toggleClass('active');
+                nav.toggleClass('active');
+            });
+        })();
+    </script>
     <script src="scripts.js"></script>
 </body>
 </html>
