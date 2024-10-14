@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Static Webpage</title>
+    <title>Rachel Elena LaQuea</title>
     <link rel="stylesheet" href="styles.css" />
     <style type="text/css">
         * {
@@ -21,7 +21,7 @@
         .menu-btn-block {
             width: 100%;
             height: 6px;
-            background-color: #09f;
+            background-color: #333;
             border-radius: 3px;
             transform-origin: 0 50%;
             transition: transform 0.3s ease;
@@ -75,8 +75,43 @@
             background-color: #555;
         }
     </style>
+
+<style type="text/css">
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: Open Sans;
+    }
+
+    .intro {
+        background: url('forest.jpg') no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+    .intro h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 7em;
+        color: #FF3;
+    }
+
+    .content {
+        height: 2000px;
+        padding: 100px 0;
+        background-color: #aaa;
+    }
+    .content h2, .content p {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+</style>
 </head>
 <body>
+<div>
     <a href="#" class="menu-btn">
         <div class="menu-btn-block top"></div>
         <div class="menu-btn-block middle"></div>
@@ -90,14 +125,55 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+
+</div>
+
+<div class="intro">
+    <h1>Rachel Elena LaQuea</h1>
+</div>
+
+<div class="content">
+
+    <section>
+    <h2>Software Development</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tristique dui odio
+    </p>
+</section>
+
+    <h2>Music</h2>
+<section>
+    <h2>Art</h2>
+</p>
+</section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tristique dui odio, et faucibus velit porttitor vitae. Morbi dignissim laoreet lectus, ut consequat dolor accumsan et. Nunc ut tincidunt massa. Vivamus in nulla sed elit pulvinar pretium. Proin euismod vehicula magna, quis porta augue condimentum at. Vestibulum pharetra sem id faucibus rhoncus. Vivamus nulla elit, tristique sit amet lacinia a, sodales sit amet purus. Proin vehicula feugiat interdum. Praesent congue consectetur ligula, nec interdum sapien convallis eget. Duis in sem bibendum, congue dui nec, bibendum augue. Suspendisse potenti. Ut nec vulputate lorem. Aenean a mollis tortor, a rutrum arcu.</p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+    (function() {
+
+        var windowH = $(window).height(),
+            introEl = $('div.intro'),
+            introHeadingH = introEl.find('h1').height();
+
+        introEl.css('padding', (windowH - introHeadingH)/2 + 'px 0');
+
+        $(document).on('scroll', function() {
+            introEl.slideUp(1000, function() { $(document).off('scroll'); });
+        });
+
+    })();
+
+</script>
     <header>
-        <h1>Rachel Elena LaQuea</h1>
+        
     </header>
     <main class="background-container">
         <!-- Main content goes here -->
     </main>
     <footer>
-        <p>&copy; 2023 Your Name</p>
+        <p>&copy; 2024 Rachel Elena LaQuea</p>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript">
